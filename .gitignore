@@ -1,0 +1,52 @@
+# Windows system files
+Thumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+
+# Mac system files
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Temporary files
+*.tmp
+*.temp
+~$*
+*.swp
+*.swo
+
+# Backup files
+*.bak
+*.backup
+*.old
+*~
+
+# Log files
+*.log
+
+# IDE files
+.vscode/
+.idea/
+*.sublime-*
+
+# FrontPage files
+_vti_cnf/
+_vti_pvt/
+_private/
+_borders/
+_themes/
+*.fpbak
+
+# Archive/backup folders
+archive/
+backup/
+old/
+
+# Database files
+*.db
+*.sqlite
+
+# Config files that might contain sensitive info
+*.ini
+config.php
+settings.json
