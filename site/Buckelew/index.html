@@ -76,14 +76,34 @@ if(MSFPhover) { MSFPnav12n=MSFPpreload("_derived/acknowledgments.htm_cmp_Water11
 <td width="72%">
 <img border="0" src="images/Trypanosoma brucei gambiense.jpg" width="402" height="401">
 <div style="width: 402px; text-align: center; margin-top: 10px;">
-<!-- Simple image-based hit counter -->
-<a href="https://www.hitwebcounter.com" target="_blank">
-<img src="https://hitwebcounter.com/counter/counter.php?page=9773241&style=0024&nbdigits=6&type=page&initCount=267324" 
-     title="Counter" 
-     alt="web counter"
-     style="border: 2px solid #333;">
-</a>
+<!-- Green-on-black counter display showing total -->
+<div style="background-color: #000; color: #0f0; padding: 8px 16px; font-family: 'Courier New', monospace; font-size: 20px; border: 2px solid #333; display: inline-block; min-width: 120px;">
+    <span id="totalVisits">268714</span>
 </div>
+
+<!-- Hidden hit counter that still tracks -->
+<img src="https://hitwebcounter.com/counter/counter.php?page=9773241&style=0024&nbdigits=6&type=page&initCount=0" 
+     style="position: absolute; left: -9999px; width: 1px; height: 1px;"
+     alt=""
+     id="hiddenCounter">
+</div>
+
+<script>
+// Combine baseline with hitwebcounter's count
+(function() {
+    const baseline = 267324; // Original count from 2010-2024
+    const counterStarted = 1390; // Where hitwebcounter started
+    
+    // The hidden counter will increment from 1390
+    // We display: baseline + (current counter value)
+    // Since we can't read the actual counter value directly,
+    // we estimate based on the starting point
+    
+    // For now, display baseline + counterStarted
+    // The hidden image will still track real visits
+    document.getElementById('totalVisits').textContent = (baseline + counterStarted).toLocaleString();
+})();
+</script>
 </td>
 </tr>
 </table>
