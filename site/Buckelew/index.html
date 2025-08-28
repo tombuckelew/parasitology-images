@@ -81,17 +81,24 @@ if(MSFPhover) { MSFPnav12n=MSFPpreload("_derived/acknowledgments.htm_cmp_Water11
 </div>
 </div>
 <script>
-// Simple visitor counter using CountAPI
+// Visitor counter starting from previous value
+const baseCount = 267324; // Original counter value
+
 fetch('https://api.countapi.xyz/hit/parasitology-images.github.io/visits')
     .then(response => response.json())
     .then(data => {
-        document.getElementById('visits').innerText = data.value;
+        // Add the API count to our base count
+        const totalVisits = baseCount + data.value;
+        document.getElementById('visits').innerText = totalVisits;
     })
     .catch(error => {
-        // If CountAPI fails, fall back to a simple incrementing display
-        console.log('Counter API unavailable, using fallback');
-        let count = 267324 + Math.floor(Math.random() * 100);
-        document.getElementById('visits').innerText = count;
+        // If CountAPI fails, use localStorage as fallback
+        console.log('Counter API unavailable, using localStorage fallback');
+        let localCount = parseInt(localStorage.getItem('visitCount') || '0');
+        localCount++;
+        localStorage.setItem('visitCount', localCount);
+        const totalVisits = baseCount + localCount;
+        document.getElementById('visits').innerText = totalVisits;
     });
 </script>
 </td>
