@@ -1,0 +1,8 @@
+# Robots.txt for Parasitology Educational Website
+# https://tombuckelew.github.io/parasitology-images/
+
+User-agent: *
+Allow: /
+
+# Sitemap location
+Sitemap: https://tombuckelew.github.io/parasitology-images/sitemap.xml
