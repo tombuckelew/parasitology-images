@@ -76,32 +76,14 @@ if(MSFPhover) { MSFPnav12n=MSFPpreload("_derived/acknowledgments.htm_cmp_Water11
 <td width="72%">
 <img border="0" src="images/Trypanosoma brucei gambiense.jpg" width="402" height="401">
 <div style="width: 402px; text-align: center; margin-top: 10px;">
-<!-- Hit counter using CountAPI -->
-<div style="background-color: #000; color: #0f0; padding: 8px 16px; font-family: 'Courier New', monospace; font-size: 20px; border: 2px solid #333; display: inline-block; min-width: 120px;">
-    <span id="visits">267324</span>
+<!-- Simple image-based hit counter -->
+<a href="https://www.hitwebcounter.com" target="_blank">
+<img src="https://hitwebcounter.com/counter/counter.php?page=9773241&style=0024&nbdigits=6&type=page&initCount=267324" 
+     title="Counter" 
+     alt="web counter"
+     style="border: 2px solid #333;">
+</a>
 </div>
-</div>
-<script>
-// Visitor counter starting from previous value
-const baseCount = 267324; // Original counter value
-
-fetch('https://api.countapi.xyz/hit/parasitology-images.github.io/visits')
-    .then(response => response.json())
-    .then(data => {
-        // Add the API count to our base count
-        const totalVisits = baseCount + data.value;
-        document.getElementById('visits').innerText = totalVisits;
-    })
-    .catch(error => {
-        // If CountAPI fails, use localStorage as fallback
-        console.log('Counter API unavailable, using localStorage fallback');
-        let localCount = parseInt(localStorage.getItem('visitCount') || '0');
-        localCount++;
-        localStorage.setItem('visitCount', localCount);
-        const totalVisits = baseCount + localCount;
-        document.getElementById('visits').innerText = totalVisits;
-    });
-</script>
 </td>
 </tr>
 </table>
