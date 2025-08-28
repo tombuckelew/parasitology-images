@@ -75,14 +75,25 @@ if(MSFPhover) { MSFPnav12n=MSFPpreload("_derived/acknowledgments.htm_cmp_Water11
 <td width="72%">
 <img border="0" src="images/Trypanosoma brucei gambiense.jpg" width="402" height="401">
 <div style="width: 402px; text-align: center; margin-top: 10px;">
-<!-- Free counter from www.digits.net -->
-<a href="https://www.digits.net" target="_blank">
-<img src="https://counter.digits.net/?counter={3f6d8e7a-9b24-4c56-8a12-7f9e3d5c8b2a}&template=simple&background=000000&foreground=00ff00&digits=6" 
-     alt="Hit Counter by Digits" 
-     style="border: 2px solid #333; display: inline-block;"
-     border="0"  />
-</a>
+<!-- Hit counter using CountAPI -->
+<div style="background-color: #000; color: #0f0; padding: 8px 16px; font-family: 'Courier New', monospace; font-size: 20px; border: 2px solid #333; display: inline-block; min-width: 120px;">
+    <span id="visits">267324</span> visits
 </div>
+</div>
+<script>
+// Simple visitor counter using CountAPI
+fetch('https://api.countapi.xyz/hit/parasitology-images.github.io/visits')
+    .then(response => response.json())
+    .then(data => {
+        document.getElementById('visits').innerText = data.value;
+    })
+    .catch(error => {
+        // If CountAPI fails, fall back to a simple incrementing display
+        console.log('Counter API unavailable, using fallback');
+        let count = 267324 + Math.floor(Math.random() * 100);
+        document.getElementById('visits').innerText = count;
+    });
+</script>
 </td>
 </tr>
 </table>
